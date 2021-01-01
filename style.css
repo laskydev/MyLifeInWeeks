@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 3vh;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hiden{
+    margin-top: -100vh;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70vw;
+    height: 60vh;
+    margin: 0 auto;
+    margin-top: 20vh;
+    background-color: coral;
+}
+
+.header-tittle{
+    margin-top: -5%;
+}
+
+.espacio{
+    margin-bottom: 3vh;
+    margin-top: 3vh;
+}
+    section
+    
+.header-input{
+    width: 20vw;
+    height: 3vh;
+    outline: none;
+}
+
+.header-button{
+    margin-top: 2%;
+    width: 20vw;
+    height: 5vh;
+    font-size: 3vh;
+    outline: none;
+}
+
+.error{
+    color: red;
+    margin-top: 3vh;
+}
+
+.correcto{
+    border: 2px solid green
+}
+
+.incorrecto{
+    border: 2px solid red
+}
