@@ -10,8 +10,8 @@ body{
     overflow: hidden;
 }
 
-.hiden{
-    margin-top: -100vh;
+.hidden{
+    display: none;
 }
 
 .header{
