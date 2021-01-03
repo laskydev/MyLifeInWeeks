@@ -24,6 +24,7 @@ body{
     margin: 0 auto;
     margin-top: 20vh;
     background-color: coral;
+    border-radius: 65px;
 }
 
 .header-tittle{
@@ -61,4 +62,22 @@ body{
 
 .incorrecto{
     border: 2px solid red
+}
+
+/*Semanas*/
+
+main{
+    width: 80vw;
+    margin:0 auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(52, 1fr);
+    padding: 20px;
+}
+
+.weeks{
+    width: 10px;
+    margin-bottom: 2px;
+    height: 8px;
+    border: 1px solid black;
 }

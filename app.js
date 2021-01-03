@@ -6,34 +6,33 @@ const inputMes = document.querySelector(".mes");
 const inputAnio = document.querySelector(".anio");
 const button = document.querySelector(".header-button");
 const divError = document.querySelector(".errores");
+const main = document.querySelector("main");
 let control = false;
-
-//Reparar Fecha, es una constante por mientras [Día, Mes, Año]
-let fechaNacimiento = []
+let fechaNacimiento = [];
 
 //LISTENERS
 
-document.addEventListener("DOMContentLoaded", encontrarFecha);
-button.addEventListener("click", mostrarWeeks);
+document.addEventListener("DOMContentLoaded", paginaCargada);
+button.addEventListener("click", seDioClick);
 inputDia.addEventListener("blur", verificarDia);
 inputMes.addEventListener("blur", verificarMes);
 inputAnio.addEventListener("blur", verificarAnio);
 
 //Functions
 
-function encontrarFecha(e) {
-    }
+function paginaCargada(e) {
+    main.classList.add("hidden");
+}
 
-function mostrarWeeks(e) {
-    //header.style.display = "none";
+function seDioClick(e) {
+    header.style.display = "none";
     let fechaActual = new Date();
-    let fechaDeNacimiento = new Date(`${fechaNacimiento[2]}/0${fechaNacimiento[1]}/${fechaNacimiento[0]}`)
-    console.log(fechaDeNacimiento)
-    //tiempoActual = fechaActual.getTime();
-    //tiempoNacimiento = fechaDeNacimiento.getTime();
-    
-    let resta = fechaActual.getTime() - fechaDeNacimiento.getTime()
-    console.log(resta)
+    let fechaDeNacimiento = new Date(
+        `${fechaNacimiento[2]}/0${fechaNacimiento[1]}/${fechaNacimiento[0]}`
+    );
+    let resta = fechaActual.getTime() - fechaDeNacimiento.getTime();
+    resta = resta / 1000 / 86400 / 7;
+    mostrarWeeks(resta);
 }
 
 function verificarDia(e) {
@@ -95,5 +94,18 @@ function incorrecto(elemento, texto) {
 function limpiarMes(valor) {
     if (valor > 0 && valor <= 09) {
         return valor.replace("0", "");
+    } else {
+        return valor;
+    }
+}
+
+//Mostrar las weeks
+function mostrarWeeks(semanasVividas) {
+    const weeks = document.querySelectorAll(".weeks");
+    console.log(weeks);
+    let semanasVividass = semanasVividas;
+    main.classList.remove("hidden");
+    for (let i = 0; i < semanasVividass; i++) {
+        weeks[i].style.backgroundColor = "green";
     }
 }
